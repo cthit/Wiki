@@ -1,0 +1,3 @@
+[submodule "extensions/MW-OAuth2Client"]
+	path = extensions/MW-OAuth2Client
+	url = https://github.com/Portals/MW-OAuth2Client
