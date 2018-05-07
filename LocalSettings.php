@@ -170,3 +170,7 @@ $wgOAuth2Client['configuration']['http_bearer_token'] = 'Bearer'; // Token to us
 $wgFileExtensions = array(
        'png', 'jpg', 'tiff', 'bmp', 'jpeg', 'gif', 'pdf', 'ppt', 'tar.gz', 'tar', 'doc','docx', 'xls', 'xlsx'
 );
+
+$wgShowExceptionDetails = true;
+$wgShowDBErrorBacktrace = true;
+$wgShowSQLErrors = true;
