@@ -159,7 +159,7 @@ $wgOAuth2Client['configuration']['email'] = 'mail'; // JSON path to email
 $wgOAuth2Client['configuration']['groups'] = 'groups'; // JSON path to groups
 $wgOAuth2Client['configuration']['nick'] = 'nickname'; // JSON path to nick
 
-$wgOAuth2Client['configuration']['allowed_group'] = [$_ENV['ALLOWED_GROUP']];
+$wgOAuth2Client['configuration']['allowed_groups'] = [$_ENV['ALLOWED_GROUP']];
 
 $wgOAuth2Client['configuration']['scopes'] = ''; //Permissions
 
