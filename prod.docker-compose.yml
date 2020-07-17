@@ -1,0 +1,32 @@
+version: "2"
+services:
+  itwiki:
+    build:
+      context: .
+    environment:
+      - WIKI_NAME=prit
+      - ROOT_URL=https://digitwiki.chalmers.it
+      - DB_SERVER=database
+      - DB_NAME=wikidb
+      - DB_USER=wikiuser
+      - DB_PASSWORD=2bnlSQzHGH10su4qqOJ5iMzmxV9IQUTviDQwGUdMrH4aWewLzKWTbP1MMyqwKeGkEJelvwJ1LotcWhaFY29t2b3JKNo8VVciPIRj
+      - SECRET_KEY=9af2c3d01e01a55967d71c728e616d76844e157bedf8fccb57daa3a5cad2df19
+      - CLIENT_ID=b11e8a7093d7022765080151c8717d86aa05d4737b1c8fb8e3175756868560f4
+      - CLIENT_SECRET=17afdbb8730b25287c4bffa53ab4c43ec0211032d31836334444dfa08066a686
+      - ALLOWED_GROUP=digit
+      - FIRST_TIME=true
+    volumes:
+      - ./images:/var/www/html/images
+    ports:
+      - 8082:80
+    restart: always
+  database:
+    image: mariadb
+    restart: always
+    environment:
+      - MYSQL_PASSWORD=2bnlSQzHGH10su4qqOJ5iMzmxV9IQUTviDQwGUdMrH4aWewLzKWTbP1MMyqwKeGkEJelvwJ1LotcWhaFY29t2b3JKNo8VVciPIRj
+      - MYSQL_ROOT_PASSWORD=x0LtvODg2Yu0b0WEnhtvorihCVb2o2uNAWxRDbcZqKleob6RVKZqfBwEi4gxUdiS6FoLXbdqVgArylK5kLMz3loX69I0dElPuI5x
+      - MYSQL_USER=wikiuser
+      - MYSQL_DATABASE=wikidb
+    volumes:
+      - ./db:/var/lib/mysql
